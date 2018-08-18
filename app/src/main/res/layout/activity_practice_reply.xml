@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <com.mysoft.university.mvp.ui.view.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        app:actionText="提交"
+        app:title="回复练习"/>
+
+    <TextView
+        android:id="@+id/practice_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="24dp"
+        android:text="主题：这是一个练习主题的引用"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/sp_19"/>
+
+    <EditText
+        android:id="@+id/practice_repay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_practice_repay"
+        android:gravity="start"
+        android:hint="请输入"
+        android:minHeight="200dp"
+        android:padding="13dp"
+        android:textColor="@color/textColorPrimary"
+        android:textColorHint="@color/textColorSecondary"
+        android:textSize="@dimen/sp_15"/>
+</LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/space"
+              android:paddingRight="@dimen/space">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="账号密码登录"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="27sp"/>
+
+    <com.mysoft.university.mvp.ui.view.ClearEditText
+        android:id="@+id/username"
+        style="@style/edit_text_simple_style"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="55dp"
+        android:hint="请输入邮箱账号"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/sp_14"/>
+
+    <View
+        style="@style/div_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="9dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.mysoft.university.mvp.ui.view.ClearEditText
+            android:id="@+id/password"
+            style="@style/edit_text_simple_style"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:textSize="@dimen/sp_14"/>
+
+        <CheckBox
+            android:id="@+id/toggle_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/toggle_password"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/div_size"
+        android:background="@color/div_color"/>
+
+    <TextView
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:alpha="0.45"
+        android:background="@drawable/shape_blue_corner"
+        android:gravity="center"
+        android:text="登 录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tourist_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="21dp"
+        android:text="先逛逛"
+        android:textColor="@color/textColorSecondary"/>
+</LinearLayout>

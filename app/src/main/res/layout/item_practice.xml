@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingLeft="17dp"
+              android:paddingRight="17dp"
+              android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="2dp"
+        android:text="影响力是一种别人所乐于接受的方式，改变他人的思想和行动的能力。影响力又被解释为战略影响、印象管理、善于表现的能力、目标的说服力以及合作的影响力等。"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/sp_13"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="张三"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/sp_12"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-07-02 14:20"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/sp_12"/>
+    </LinearLayout>
+
+    <View
+        style="@style/div_horizontal"
+        android:layout_marginTop="14dp"/>
+</LinearLayout>

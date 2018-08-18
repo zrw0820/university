@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="56dp">
+
+    <ImageView
+        android:id="@+id/portrait"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="27dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/portrait"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/portrait"
+        android:layout_alignTop="@id/portrait"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="27dp"
+        android:layout_toRightOf="@id/portrait"
+        android:gravity="center_vertical"
+        android:text="我叫小白"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="23sp"
+        tools:text="我叫小白"/>
+
+    <View
+        style="@style/div_horizontal"
+        android:layout_below="@id/portrait"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>
