@@ -2,8 +2,11 @@
 <resources>
     <declare-styleable name="TitleBar">
         <attr name="title" format="string"/>
+        <attr name="backIcon" format="reference"/>
         <attr name="backText" format="string"/>
+        <attr name="backTextColor" format="color"/>
         <attr name="actionText" format="string"/>
+        <attr name="actionTextColor" format="color"/>
         <attr name="showDivider" format="boolean"/>
     </declare-styleable>
 </resources>

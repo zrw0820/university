@@ -65,10 +65,10 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 app:tl_indicator_color="@color/blue_start"
+                app:tl_indicator_corner_radius="5dp"
                 app:tl_indicator_height="2dp"
                 app:tl_indicator_width_equal_title="true"
                 app:tl_tab_padding="5dp"
-                app:tl_tab_space_equal="true"
                 app:tl_textSelectColor="@color/textColorPrimary"
                 app:tl_textUnselectColor="@color/textColorSecondary"
                 app:tl_textsize="@dimen/sp_15"/>

@@ -60,7 +60,7 @@ ext {
             "badgeview"                : "q.rorbin:badgeview:1.1.3",
             "ultraviewpager"           : "com.alibaba.android:ultraviewpager:1.0.7.1@aar",
             "GSYVideoPlayer"           : "com.shuyu:GSYVideoPlayer:5.0.2",
-            "FlycoTabLayout_Lib"              : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            "FlycoTabLayout_Lib"       : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
 
             //rx1
             "rxandroid"                : "io.reactivex:rxandroid:1.2.1",

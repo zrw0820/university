@@ -24,7 +24,9 @@ import butterknife.ButterKnife;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
-
+/**
+ * 首页
+ */
 public class IndexActivity extends BaseActivity<IndexPresenter> implements IndexContract.View {
     @BindView(R.id.radio_tab)
     RadioGroup mRadioTab;

@@ -59,7 +59,7 @@ public class ClassFragment extends BaseFragment<ClassPresenter> implements Class
 
     @Override
     public void setupFragmentComponent(@NonNull AppComponent appComponent) {
-        DaggerClassComponent //如找不到该类,请编译一下项目
+        DaggerClassComponent
                 .builder()
                 .appComponent(appComponent)
                 .classModule(new ClassModule(this))

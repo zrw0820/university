@@ -40,7 +40,7 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return "标题栏";
+        return "标题栏" + (position % 2 == 0 ? "" : "WWW");
     }
 
     @Override
