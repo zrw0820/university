@@ -48,7 +48,9 @@
             android:name=".mvp.ui.activity.PracticeReplyActivity"
             android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
-        <activity android:name=".mvp.ui.activity.CourseDetailActivity">
+        <activity
+            android:name=".mvp.ui.activity.CourseDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

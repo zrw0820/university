@@ -3,10 +3,10 @@ package com.mysoft.university.mvp.ui.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mysoft.university.R;
@@ -18,7 +18,7 @@ import butterknife.OnClick;
 /**
  * Created by Zourw on 2018/8/18.
  */
-public class TitleBar extends RelativeLayout {
+public class TitleBar extends Toolbar {
     @BindView(R.id.back_btn)
     TextView mBackBtn;
     @BindView(R.id.title)
@@ -42,6 +42,9 @@ public class TitleBar extends RelativeLayout {
     }
 
     private void init(Context context, @Nullable AttributeSet attrs) {
+        setContentInsetsAbsolute(0, 0);
+        setContentInsetsRelative(0, 0);
+
         inflate(context, R.layout.view_title_bar, this);
         ButterKnife.bind(this);
 

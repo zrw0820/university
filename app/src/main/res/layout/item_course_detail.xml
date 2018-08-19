@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:paddingLeft="17dp"
+    android:paddingRight="17dp"
+    android:paddingTop="19dp">
+
+    <TextView
+        android:id="@+id/course_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="课程1"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/sp_19"/>
+
+    <TextView
+        android:id="@+id/course_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="思维：发现优势找到适合你的沟通方式"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/sp_14"/>
+
+    <ImageView
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:background="#abc"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/last_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_last_course"/>
+
+        <TextView
+            android:id="@+id/no_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="课程PPT 1/37"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp_16"/>
+
+        <ImageView
+            android:id="@+id/next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_next_course"/>
+    </LinearLayout>
+</LinearLayout>

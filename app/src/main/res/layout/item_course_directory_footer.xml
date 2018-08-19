@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="6dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/check_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/shape_course_directory_footer"
+        android:paddingBottom="4dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:paddingTop="4dp"
+        android:text="查看全部课程"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/sp_12"/>
+</FrameLayout>

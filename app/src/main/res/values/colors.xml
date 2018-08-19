@@ -13,4 +13,7 @@
     <color name="blue_end">#0093FF</color>
 
     <color name="div_color">#FFD8D8D8</color>
+
+    <color name="video_controller_widget_bg">#99000000</color>
+    <color name="video_controller_widget_text">#ffffff</color>
 </resources>
