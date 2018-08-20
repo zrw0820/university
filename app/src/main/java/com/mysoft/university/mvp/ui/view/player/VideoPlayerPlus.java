@@ -1,6 +1,5 @@
 package com.mysoft.university.mvp.ui.view.player;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -15,11 +14,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jess.arms.utils.LogUtils;
 import com.mysoft.university.R;
 import com.shuyu.gsyvideoplayer.listener.GSYVideoShotListener;
 import com.shuyu.gsyvideoplayer.listener.GSYVideoShotSaveListener;
 import com.shuyu.gsyvideoplayer.listener.VideoAllCallBack;
-import com.shuyu.gsyvideoplayer.utils.CommonUtil;
 import com.shuyu.gsyvideoplayer.utils.NetworkUtils;
 import com.shuyu.gsyvideoplayer.video.base.GSYBaseVideoPlayer;
 import com.shuyu.gsyvideoplayer.video.base.GSYVideoPlayer;
@@ -59,9 +58,6 @@ public class VideoPlayerPlus extends GSYVideoPlayer {
 
     // 触摸移动显示全部时间
     protected TextView mDialogTotalTime;
-
-    // 触摸移动显示时间差（+xx秒 或 -xx秒）
-    protected TextView mDialogDiffTime;
 
     protected Drawable mBottomProgressDrawable;
     protected Drawable mBottomShowProgressDrawable;
@@ -145,7 +141,6 @@ public class VideoPlayerPlus extends GSYVideoPlayer {
             View progressView = View.inflate(getActivityContext(), R.layout.dialog_video_progress, null);
             mDialogSeekTime = progressView.findViewById(R.id.tv_current);
             mDialogTotalTime = progressView.findViewById(R.id.tv_duration);
-            mDialogDiffTime = progressView.findViewById(R.id.tv_diff);
             mProgressDialog = new Dialog(getActivityContext(), R.style.video_style_dialog_progress);
             mProgressDialog.setContentView(progressView);
             if (mProgressDialog.getWindow() != null) {
@@ -175,8 +170,6 @@ public class VideoPlayerPlus extends GSYVideoPlayer {
         }
         mDialogSeekTime.setText(seekTime);
         mDialogTotalTime.setText(String.format(Locale.CHINA, " / %s", totalTime));
-        int curWidth = CommonUtil.getCurrentScreenLand((Activity) getActivityContext()) ? mScreenHeight : mScreenWidth;
-        mDialogDiffTime.setText(String.format(Locale.CHINA, "%s秒", CommonUtil.stringForTime((int) (deltaX * totalTimeDuration / curWidth / mSeekRatio))));
     }
 
     @Override
@@ -221,8 +214,11 @@ public class VideoPlayerPlus extends GSYVideoPlayer {
             mVolumeDialog.show();
         }
         mDialogVolumeProgressBar.setProgress(volumePercent);
-        if (mBrightnessDialogTv != null)
-            mBrightnessDialogTv.setText((volumePercent * 100) + "%");
+        LogUtils.debugInfo("volumePercent:" + volumePercent);
+        if (mVolumeDialogTv != null) {
+            mVolumeDialogTv.setVisibility(GONE);
+            mVolumeDialogTv.setText((volumePercent * 100) + "%");
+        }
     }
 
     @Override
@@ -267,10 +263,12 @@ public class VideoPlayerPlus extends GSYVideoPlayer {
         if (!mBrightnessDialog.isShowing()) {
             mBrightnessDialog.show();
         }
-        mDialogBrightnessProgressBar.setProgress((int) percent);
-        if (mBrightnessDialogTv != null)
-            mBrightnessDialogTv.setText((int) (percent * 100) + "%");
-
+        mDialogBrightnessProgressBar.setProgress((int) (percent * 100));
+        LogUtils.debugInfo("percent:" + percent);
+        if (mBrightnessDialogTv != null) {
+            mBrightnessDialogTv.setVisibility(GONE);
+            mBrightnessDialogTv.setText(mDialogBrightnessProgressBar.getProgress() + "%");
+        }
     }
 
     @Override

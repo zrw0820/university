@@ -148,7 +148,6 @@ public class CourseDetailActivity extends BaseActivity<CourseDetailPresenter> im
                     public void onPrepared(String s, Object... objects) {
                         // 显示播放器
                         mPlayerLoading.setVisibility(View.GONE);
-                        mVideoTitle.setVisibility(View.GONE);
                         mVideoPlayer.setVisibility(View.VISIBLE);
                         // 开始播放了才能旋转和全屏
                         mOrientationUtils.setEnable(true);
@@ -240,10 +239,13 @@ public class CourseDetailActivity extends BaseActivity<CourseDetailPresenter> im
 
     private void playVideo() {
         mPlayerLoading.setVisibility(View.VISIBLE);
+        mVideoTitle.setVisibility(View.GONE);
+
+        String url = "http://upos-hz-mirrorkodo.acgvideo.com/upgcxcode/53/68/51076853/51076853-1-6.mp4?e=ig8euxZM2rNcNbU1hwdVtWRVhbdVhoNvNC8BqJIzNbfqXBvEuENvNC8aNEVEtEvE9IB5QK==&deadline=1534736958&dynamic=1&gen=playurl&oi=1885315424&os=kodo&platform=html5&rate=51000&trid=7dbfe980094e483cbe5a0aa7dcef8ae1&uipk=5&uipv=5&um_deadline=1534736958&um_sign=4d22b824ec36bbd06f7e0ef225dd90e9&upsig=9410a4a827534221874b4b101029698f";
 
         mVideoPlayer.release();
         mPlayerOptionBuilder
-                .setUrl("http://cn-sdyt-cu-v-11.acgvideo.com/upgcxcode/97/48/50894897/50894897-1-6.mp4?expires=1534700400&platform=html5&ssig=XF00U7SZTIAY79S20NZXNQ&oi=989525098&nfa=7VMUDqBQpI8VGBbhQ1faUQ==&dynamic=1&hfa=2034938775&hfb=M2Y2ZWYwZjM2YmRiYmY5MDljYTBiOWE2ZmEwYjJmYTM=&trid=4383c8fd45f54d4ba49d795363066daa&nfc=1")// 视频URL
+                .setUrl(url)// 视频URL
                 .setCacheWithPlay(cacheVideo)
                 .build(mVideoPlayer);
         mVideoPlayer.postDelayed(() -> mVideoPlayer.startPlayLogic(), 300);
