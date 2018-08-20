@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.jess.arms.base.BaseActivity;
@@ -45,6 +46,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 /**
  * 课程详情
  */
+@Route(path = "/course/detail")
 public class CourseDetailActivity extends BaseActivity<CourseDetailPresenter> implements CourseDetailContract.View, AppBarLayout.OnOffsetChangedListener {
 
     @BindView(R.id.app_bar_layout)

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -27,6 +28,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 /**
  * 首页
  */
+@Route(path = "/app/index")
 public class IndexActivity extends BaseActivity<IndexPresenter> implements IndexContract.View {
     @BindView(R.id.radio_tab)
     RadioGroup mRadioTab;

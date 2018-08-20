@@ -15,6 +15,7 @@ import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper;
 import com.mysoft.university.R;
 import com.mysoft.university.mvp.ui.entity.PersonalItem;
+import com.mysoft.university.mvp.ui.listener.OnItemClickListener;
 
 import java.util.List;
 
@@ -27,6 +28,8 @@ import butterknife.ButterKnife;
 public class PersonalAdapter extends DelegateAdapter.Adapter<PersonalAdapter.ViewHolder> {
     private Context context;
     private List<PersonalItem> items;
+
+    private OnItemClickListener<PersonalItem> mItemClickListener;
 
     public PersonalAdapter(Context context, List<PersonalItem> items) {
         this.context = context;
@@ -65,10 +68,20 @@ public class PersonalAdapter extends DelegateAdapter.Adapter<PersonalAdapter.Vie
         holder.mIcon.setImageResource(item.getIcon());
         holder.mText.setText(item.getText());
         holder.mSummary.setText(TextUtils.isEmpty(item.getSummary()) ? "" : item.getSummary());
+
+        holder.itemView.setOnClickListener(v -> {
+            if (mItemClickListener != null) {
+                mItemClickListener.onItemClick(position, item);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return items == null ? 0 : items.size();
+    }
+
+    public void setItemClickListener(OnItemClickListener<PersonalItem> itemClickListener) {
+        mItemClickListener = itemClickListener;
     }
 }

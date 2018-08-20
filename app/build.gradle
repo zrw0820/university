@@ -17,6 +17,12 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -62,8 +68,8 @@ dependencies {
     implementation rootProject.ext.dependencies["boxing-impl"]
     implementation rootProject.ext.dependencies["ucrop"]
     implementation rootProject.ext.dependencies["favor"]
-    /*implementation rootProject.ext.dependencies["arouter"]
-    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]*/
+    implementation rootProject.ext.dependencies["arouter"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 
     //view
     annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {

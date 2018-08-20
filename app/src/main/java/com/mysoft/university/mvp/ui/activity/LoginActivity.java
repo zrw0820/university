@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.Preconditions;
@@ -30,8 +32,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
+/**
+ * 登录
+ */
+@Route(path = "/app/login")
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
-
     @BindView(R.id.username)
     ClearEditText mUsername;
     @BindView(R.id.password)
@@ -131,5 +136,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 }
                 break;
         }
+    }
+
+    @Override
+    public void toIndexActivity() {
+        ARouter.getInstance()
+                .build("/app/index")
+                .navigation();
+        finish();
     }
 }

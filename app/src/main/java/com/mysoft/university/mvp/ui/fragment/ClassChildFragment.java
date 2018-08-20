@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -20,6 +21,7 @@ import com.mysoft.university.mvp.contract.ClassChildContract;
 import com.mysoft.university.mvp.model.entity.ClassInfo;
 import com.mysoft.university.mvp.presenter.ClassChildPresenter;
 import com.mysoft.university.mvp.ui.adapter.IndexClassAdapter;
+import com.mysoft.university.mvp.ui.listener.OnItemClickListener;
 
 import java.util.List;
 
@@ -68,6 +70,15 @@ public class ClassChildFragment extends BaseFragment<ClassChildPresenter> implem
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         mRecycleView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new OnItemClickListener<ClassInfo>() {
+            @Override
+            public void onItemClick(int position, ClassInfo classInfo) {
+                ARouter.getInstance()
+                        .build("/course/detail")
+                        .navigation();
+            }
+        });
     }
 
     @Override

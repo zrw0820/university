@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bilibili.boxing.BoxingCrop;
 import com.bilibili.boxing.BoxingMediaLoader;
 import com.jess.arms.base.delegate.AppLifecycles;
@@ -43,7 +44,10 @@ public class AppLifecyclesImpl implements AppLifecycles {
         if (BuildConfig.LOG_DEBUG) {//Timber初始化
             Timber.plant(new Timber.DebugTree());
             ButterKnife.setDebug(true);
+            ARouter.openLog();
+            ARouter.openDebug();
         }
+        ARouter.init(application);
 
         //LeakCanary 内存泄露检查
         ArmsUtils.obtainAppComponentFromContext(application)

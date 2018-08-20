@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -25,6 +26,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 /**
  * 练习回复
  */
+@Route(path = "/practice/reply")
 public class PracticeReplyActivity extends BaseActivity<PracticeReplyPresenter> implements PracticeReplyContract.View {
 
     @BindView(R.id.title_bar)

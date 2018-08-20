@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -30,6 +31,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 /**
  * 排行榜
  */
+@Route(path = "/app/rank")
 public class RankActivity extends BaseActivity<RankPresenter> implements RankContract.View {
     @BindView(R.id.title_bar)
     TitleBar mTitleBar;

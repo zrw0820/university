@@ -46,13 +46,14 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
                         AppPrefs appPrefs = PrefsHelper.getAppPrefs(mApplication);
                         appPrefs.setUsername(username);
                         appPrefs.setToken(token);
+                        mRootView.toIndexActivity();
                     }
                 });
     }
 
     // 游客
     public void tourist() {
-
+        mRootView.toIndexActivity();
     }
 
     @Override

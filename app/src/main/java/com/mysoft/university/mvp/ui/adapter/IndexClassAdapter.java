@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.mysoft.university.R;
 import com.mysoft.university.mvp.model.entity.ClassInfo;
+import com.mysoft.university.mvp.ui.listener.OnItemClickListener;
 
 import java.util.List;
 
@@ -25,6 +26,8 @@ import butterknife.ButterKnife;
 public class IndexClassAdapter extends RecyclerView.Adapter<IndexClassAdapter.ViewHolder> {
     private Context context;
     private List<ClassInfo> infos;
+
+    private OnItemClickListener<ClassInfo> mOnItemClickListener;
 
     public IndexClassAdapter(Context context, List<ClassInfo> infos) {
         this.context = context;
@@ -55,11 +58,23 @@ public class IndexClassAdapter extends RecyclerView.Adapter<IndexClassAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ClassInfo info = infos.get(position);
+
         holder.mTitle.setText("标题:" + position);
+
+        holder.itemView.setOnClickListener(v -> {
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(position, info);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return infos == null ? 0 : infos.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener<ClassInfo> onItemClickListener) {
+        mOnItemClickListener = onItemClickListener;
     }
 }

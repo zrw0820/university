@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -27,6 +28,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 /**
  * 学习记录
  */
+@Route(path = "/learn/record")
 public class LearnRecordActivity extends BaseActivity<LearnRecordPresenter> implements LearnRecordContract.View {
 
     @BindView(R.id.recycle_view)

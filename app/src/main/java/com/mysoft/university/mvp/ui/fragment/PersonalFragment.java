@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.jess.arms.base.BaseFragment;
@@ -22,6 +23,8 @@ import com.mysoft.university.mvp.contract.PersonalContract;
 import com.mysoft.university.mvp.presenter.PersonalPresenter;
 import com.mysoft.university.mvp.ui.adapter.PersonalAdapter;
 import com.mysoft.university.mvp.ui.adapter.PersonalHeaderAdapter;
+import com.mysoft.university.mvp.ui.entity.PersonalItem;
+import com.mysoft.university.mvp.ui.listener.OnItemClickListener;
 
 import javax.inject.Inject;
 
@@ -81,6 +84,16 @@ public class PersonalFragment extends BaseFragment<PersonalPresenter> implements
 
         mDelegateAdapter.addAdapter(mHeaderAdapter);
         mDelegateAdapter.addAdapter(mPersonalAdapter);
+
+        String[] urls = {"/learn/record", "/app/rank", "/app/rank", "/practice/detail", "/practice/reply"};
+        mPersonalAdapter.setItemClickListener(new OnItemClickListener<PersonalItem>() {
+            @Override
+            public void onItemClick(int position, PersonalItem personalItem) {
+                ARouter.getInstance()
+                        .build(urls[position])
+                        .navigation();
+            }
+        });
     }
 
     @Override

@@ -17,6 +17,8 @@ public interface LoginContract {
         ClearEditText getPassword();
 
         TextView getLoginBtn();
+
+        void toIndexActivity();
     }
 
     interface Model extends IModel {

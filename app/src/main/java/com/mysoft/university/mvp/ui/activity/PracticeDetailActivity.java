@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -29,6 +30,7 @@ import static com.jess.arms.utils.Preconditions.checkNotNull;
 /**
  * 练习详情
  */
+@Route(path = "/practice/detail")
 public class PracticeDetailActivity extends BaseActivity<PracticeDetailPresenter> implements PracticeDetailContract.View {
     @BindView(R.id.title_bar)
     TitleBar mTitleBar;
